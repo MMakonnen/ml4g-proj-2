@@ -2,7 +2,7 @@
 
 ## Q1: Samples from different patients may be processed by different technicians and/or at different time points. How could this possibly affect the single cell RNA sequencing data? What type of method is supposed to correct for these potential confounding effects?
 
-Processing samples from different patients by different technicians or at different time points can introduce **batch effects**, which are technical variations unrelated to the biological differences between samples. These variations can affect gene expression measurements, leading to inconsistent or biased data that may obscure true biological signals.
+Processing samples from different patients by different technicians or at different time points can introduce batch effects, which are technical variations unrelated to the biological differences between samples. These variations can affect gene expression measurements, leading to inconsistent or biased data that may obscure true biological signals.
 
 As a result the following could for example happen
 

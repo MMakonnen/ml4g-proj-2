@@ -6,15 +6,15 @@ Processing samples from different patients by different technicians or at differ
 
 As a result the following could for example happen
 
-> Variability in gene expression due to differences in sample preparation, reagents, or sequencing platforms.
-> Introduction of systematic noise that can complicate downstream analysis and interpretation.
-> Reduced ability to compare samples accurately across different conditions or patient groups.
+- Variability in gene expression due to differences in sample preparation, reagents, or sequencing platforms.
+- Introduction of systematic noise that can complicate downstream analysis and interpretation.
+- Reduced ability to compare samples accurately across different conditions or patient groups.
 
 Batch effects are typically addressed using batch correction methods such as the following:
 
-> Linear correction approaches: e.g. ComBat which adjusts for batch effects in a linear model framework
-> Integration tools: e.g. Harmony, Seurat integration methods, or Scanorama which align datasets while preserving biological variability
-> Dimensionality reduction techniques: e.g., principal component analysis (PCA) or canonical correlation analysis (CCA), which can identify and correct batch-related variation.
+- Linear correction approaches: e.g. ComBat which adjusts for batch effects in a linear model framework
+- Integration tools: e.g. Harmony, Seurat integration methods, or Scanorama which align datasets while preserving biological variability
+- Dimensionality reduction techniques: e.g., principal component analysis (PCA) or canonical correlation analysis (CCA), which can identify and correct batch-related variation.
 
 ## Q2: What are the two main categories of methods for RNA deconvolution that exist? List 2 advantages and 2 disadvantages for each of these categories.
 
@@ -24,20 +24,20 @@ The two main categories of RNA deconvolution methods are reference-based and ref
 
 **Advantages**
 
-> High accuracy when reference profiles are representative of the cell types in the mixed sample
-> Allows identification of specific cell types with predefined markers
+- High accuracy when reference profiles are representative of the cell types in the mixed sample
+- Allows identification of specific cell types with predefined markers
 
 **Disadvantages**
 
-> Dependency on high-quality reference data, which may not be available for all cell types or conditions
-> Limited applicability if the sample contains cell types not represented in the reference
+- Dependency on high-quality reference data, which may not be available for all cell types or conditions
+- Limited applicability if the sample contains cell types not represented in the reference
 
 ### Reference-free methods
 
 **Advantages**
 
-> Suitable for unknown or novel cell types, where reference data is unavailable
-> Can adapt to sample-specific variations in gene expression
+- Suitable for unknown or novel cell types, where reference data is unavailable
+- Can adapt to sample-specific variations in gene expression
 
 **Disadvantages:**
 

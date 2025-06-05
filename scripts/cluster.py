@@ -1,3 +1,4 @@
+import os
 import scanpy as sc
 from sklearn.metrics import adjusted_rand_score, v_measure_score
 from sklearn.model_selection import train_test_split
@@ -124,7 +125,7 @@ def test_cluster(test_adata, train_adata):
     return combined_adata
 
 
-def export(combined_adata, output_path="./submission/cluster_membership.csv"):
+def export(combined_adata, path):
     # Extract test data from combined AnnData object
     test_data = combined_adata[combined_adata.obs["dataset"] == "test"]
 
@@ -138,13 +139,16 @@ def export(combined_adata, output_path="./submission/cluster_membership.csv"):
     # Convert categorical clusters to integers, adjust, and revert to categorical
     test_clusters_df["cluster"] = test_clusters_df["cluster"].astype(int) + 1
 
-    test_clusters_df.to_csv(output_path, index=True)
-    print(f"File saved to: {output_path}")
+    test_clusters_df.to_csv(path, index=True)
+    print(f"File saved to: {path}")
 
 
-def pipeline():
+def pipeline(dir):
+    path = os.path.join(dir, "cluster_membership.csv")
+    if os.path.exists(path):
+        return
     train, test = load_data()
     train_clustered = train_cluster(train)
     validation_score(train_clustered)
     test_clustered = test_cluster(test, train)
-    export(test_clustered)
+    export(test_clustered, path)

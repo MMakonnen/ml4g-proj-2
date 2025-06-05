@@ -2,4 +2,7 @@ data
 submission
 submission_format
 .DS_Store
-all_data_rearranged.zip
+.venv
+.ruff*
+*.zip
+__pycache__
